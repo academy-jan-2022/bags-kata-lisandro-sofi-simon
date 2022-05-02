@@ -10,4 +10,8 @@ public class DuranceStorage {
         if (items.size() < 8) items.add(item);
         return items;
     }
+
+    public ArrayList<String> getAllItems() {
+        return null;
+    }
 }

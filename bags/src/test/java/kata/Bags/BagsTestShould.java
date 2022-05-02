@@ -97,5 +97,23 @@ public class BagsTestShould {
 
         assertThat(items, equalTo(expected));
     }
+    @Test void
+    get_all_items(){
+        String first_item = "Axe";
+        String second_item = "Hammer";
+        DuranceStorage duranceStorage = new DuranceStorage();
+        ArrayList<String> expected = new ArrayList<>() {};
+
+        duranceStorage.add(first_item);
+        duranceStorage.add(second_item);
+
+        var items =duranceStorage.getAllItems();
+
+        expected.add(first_item);
+        expected.add(second_item);
+
+        assertThat(items, equalTo(expected));
+
+    }
 
 }
