@@ -1,6 +1,7 @@
 package kata.Bags;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DuranceStorage {
 
@@ -15,5 +16,6 @@ public class DuranceStorage {
     }
 
     public void sortItemsAlphabetically() {
+        Collections.sort(items);
     }
 }
