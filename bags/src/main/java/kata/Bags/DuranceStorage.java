@@ -12,6 +12,6 @@ public class DuranceStorage {
     }
 
     public ArrayList<String> getAllItems() {
-        return null;
+        return items;
     }
 }
