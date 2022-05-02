@@ -7,7 +7,7 @@ public class DuranceStorage {
     private ArrayList<String> items = new ArrayList<>();
 
     public ArrayList<String> add(String item) {
-        items.add(item);
+        if (items.size() < 8) items.add(item);
         return items;
     }
 }
