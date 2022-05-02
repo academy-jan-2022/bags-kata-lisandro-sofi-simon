@@ -3,7 +3,7 @@ package kata.Bags;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DuranceStorage {
+public class Backpack {
 
     private final ArrayList<String> items = new ArrayList<>();
 

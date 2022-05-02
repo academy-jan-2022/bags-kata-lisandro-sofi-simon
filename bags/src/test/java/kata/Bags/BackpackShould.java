@@ -8,27 +8,27 @@ import java.util.ArrayList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class BagsTestShould {
+public class BackpackShould {
 
-    private DuranceStorage duranceStorage;
+    private Backpack backpack;
     private ArrayList<String> expected;
     String FIRST_ITEM = "Axe";
     String SECOND_ITEM = "Hammer";
 
     @BeforeEach
     void setUp() {
-        duranceStorage = new DuranceStorage();
+        backpack = new Backpack();
         expected = new ArrayList<>() {};
     }
 
     @Test void
     get_all_items(){
-        DuranceStorage duranceStorage = new DuranceStorage();
+        Backpack backpack = new Backpack();
 
-        duranceStorage.add(FIRST_ITEM);
-        duranceStorage.add(SECOND_ITEM);
+        backpack.add(FIRST_ITEM);
+        backpack.add(SECOND_ITEM);
 
-        var items = duranceStorage.getAllItems();
+        var items = backpack.getAllItems();
 
         expected.add(FIRST_ITEM);
         expected.add(SECOND_ITEM);
@@ -37,33 +37,33 @@ public class BagsTestShould {
     }
 
     @Test void add_the_item_to_backpack(){
-        duranceStorage.add(FIRST_ITEM);
+        backpack.add(FIRST_ITEM);
 
         expected.add(FIRST_ITEM);
-        ArrayList<String> items = duranceStorage.getAllItems();
+        ArrayList<String> items = backpack.getAllItems();
 
         assertThat(items, equalTo(expected));
     }
 
     @Test void add_two_items_to_backpack(){
-        duranceStorage.add(FIRST_ITEM);
-        duranceStorage.add(SECOND_ITEM);
+        backpack.add(FIRST_ITEM);
+        backpack.add(SECOND_ITEM);
 
         expected.add(FIRST_ITEM);
         expected.add(SECOND_ITEM);
 
-        ArrayList<String> items = duranceStorage.getAllItems();
+        ArrayList<String> items = backpack.getAllItems();
 
         assertThat(items, equalTo(expected));
     }
 
     @Test
     void add_multiple_items(){
-        duranceStorage.add(FIRST_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
+        backpack.add(FIRST_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
 
         expected.add(FIRST_ITEM);
         expected.add(SECOND_ITEM);
@@ -71,22 +71,22 @@ public class BagsTestShould {
         expected.add(SECOND_ITEM);
         expected.add(SECOND_ITEM);
 
-        ArrayList<String> items = duranceStorage.getAllItems();
+        ArrayList<String> items = backpack.getAllItems();
 
         assertThat(items, equalTo(expected));
     }
 
     @Test void
     not_add_more_than_eight_items(){
-        duranceStorage.add(FIRST_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(SECOND_ITEM);
+        backpack.add(FIRST_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(SECOND_ITEM);
 
         expected.add(FIRST_ITEM);
         expected.add(SECOND_ITEM);
@@ -97,22 +97,22 @@ public class BagsTestShould {
         expected.add(SECOND_ITEM);
         expected.add(SECOND_ITEM);
 
-        ArrayList<String> items = duranceStorage.getAllItems();
+        ArrayList<String> items = backpack.getAllItems();
 
         assertThat(items, equalTo(expected));
     }
 
     @Test void
     sort_items_alphabetically() {
-        duranceStorage.add(SECOND_ITEM);
-        duranceStorage.add(FIRST_ITEM);
+        backpack.add(SECOND_ITEM);
+        backpack.add(FIRST_ITEM);
 
         expected.add(FIRST_ITEM);
         expected.add(SECOND_ITEM);
 
-        duranceStorage.sortItemsAlphabetically();
+        backpack.sortItemsAlphabetically();
 
-        ArrayList<String> items = duranceStorage.getAllItems();
+        ArrayList<String> items = backpack.getAllItems();
 
         assertThat(items, equalTo(expected));
     }
