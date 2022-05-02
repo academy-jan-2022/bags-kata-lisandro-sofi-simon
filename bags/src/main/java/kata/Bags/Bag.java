@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public class Bag {
     public ArrayList<String> getAllItems() {
-     return null;
+     return new ArrayList<String>();
     }
 }
