@@ -13,4 +13,7 @@ public class DuranceStorage {
     public ArrayList<String> getAllItems() {
         return items;
     }
+
+    public void sortItemsAlphabetically() {
+    }
 }

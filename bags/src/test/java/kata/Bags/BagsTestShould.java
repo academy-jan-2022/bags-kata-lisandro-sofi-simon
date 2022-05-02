@@ -101,4 +101,19 @@ public class BagsTestShould {
 
         assertThat(items, equalTo(expected));
     }
+
+    @Test void
+    sort_items_alphabetically() {
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(FIRST_ITEM);
+
+        expected.add(FIRST_ITEM);
+        expected.add(SECOND_ITEM);
+
+        duranceStorage.sortItemsAlphabetically();
+
+        ArrayList<String> items = duranceStorage.getAllItems();
+
+        assertThat(items, equalTo(expected));
+    }
 }
