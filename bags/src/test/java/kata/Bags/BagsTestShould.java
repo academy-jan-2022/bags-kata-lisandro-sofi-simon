@@ -12,11 +12,15 @@ public class BagsTestShould {
 
     @Test void add_the_item_to_backpack(){
         String item = "Axe";
-        DuranceStorage duranceStorage = new DuranceStorage();
-        String[] output = duranceStorage.add(item);
-        String[] expected = new String[]{item};
 
-        assertEquals(expected[0], output[0]);
+        DuranceStorage duranceStorage = new DuranceStorage();
+        ArrayList<String> output = duranceStorage.add(item);
+        ArrayList<String> expected = new ArrayList<>() {
+        };
+
+        expected.add(item);
+
+        assertThat(output, equalTo(expected));
 
     }
 
@@ -24,13 +28,14 @@ public class BagsTestShould {
         String first_item = "Axe";
         String second_item = "Hammer";
         DuranceStorage duranceStorage = new DuranceStorage();
+        ArrayList<String> expected = new ArrayList<>() {};
 
         duranceStorage.add(first_item);
         var items = duranceStorage.add(second_item);
 
-        String[] expected = new String[]{first_item, second_item};
+        expected.add(first_item);
+        expected.add(second_item);
 
-        assertEquals(items.length, 2);
         assertThat(items, equalTo(expected));
     }
 
