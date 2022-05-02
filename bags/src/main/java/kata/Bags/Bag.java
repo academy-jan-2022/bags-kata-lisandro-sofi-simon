@@ -1,6 +1,7 @@
 package kata.Bags;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Bag {
 
@@ -17,5 +18,6 @@ public class Bag {
     }
 
     public void sortItemsAlphabetically() {
+        Collections.sort(items);
     }
 }
