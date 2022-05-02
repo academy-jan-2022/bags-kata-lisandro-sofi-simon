@@ -12,12 +12,12 @@ public class BagShould {
 
     private Bag bag;
     private ArrayList<String> expected;
+    private final String FIRST_ITEM = "Axe";
 
     @BeforeEach
     void setUp() {
         expected = new ArrayList<>();
         bag = new Bag();
-
     }
 
     @Test void
@@ -27,8 +27,8 @@ public class BagShould {
     }
     @Test void
     get_one_item_bag_if_one_item_where_added(){
-        expected.add("Axe");
-        bag.add("Axe");
+        expected.add(FIRST_ITEM);
+        bag.add(FIRST_ITEM);
 
         ArrayList<String> result = bag.getAllItems();
 
@@ -37,16 +37,16 @@ public class BagShould {
 
     @Test void
     get_four_item_bag_if_five_item_where_added(){
-        expected.add("Axe");
-        expected.add("Axe");
-        expected.add("Axe");
-        expected.add("Axe");
+        expected.add(FIRST_ITEM);
+        expected.add(FIRST_ITEM);
+        expected.add(FIRST_ITEM);
+        expected.add(FIRST_ITEM);
 
-        bag.add("Axe");
-        bag.add("Axe");
-        bag.add("Axe");
-        bag.add("Axe");
-        bag.add("Axe");
+        bag.add(FIRST_ITEM);
+        bag.add(FIRST_ITEM);
+        bag.add(FIRST_ITEM);
+        bag.add(FIRST_ITEM);
+        bag.add(FIRST_ITEM);
 
         ArrayList<String> result = bag.getAllItems();
         assertThat(result, equalTo(expected));
@@ -54,11 +54,12 @@ public class BagShould {
 
     @Test void
     order_items_alphabetically(){
-        expected.add("Axe");
-        expected.add("Hammer");
+        String SECOND_ITEM = "Hammer";
+        expected.add(FIRST_ITEM);
+        expected.add(SECOND_ITEM);
 
-
-        bag.add("Axe");
+        bag.add(FIRST_ITEM);
+        bag.add(SECOND_ITEM);
 
         bag.sortItemsAlphabetically();
 
