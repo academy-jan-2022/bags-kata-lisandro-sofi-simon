@@ -10,55 +10,47 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class BagsTestShould {
 
-
     private DuranceStorage duranceStorage;
     private ArrayList<String> expected;
+    String FIRST_ITEM = "Axe";
+    String SECOND_ITEM = "Hammer";
 
     @BeforeEach
     void setUp() {
         duranceStorage = new DuranceStorage();
         expected = new ArrayList<>() {};
-
     }
 
     @Test void
     get_all_items(){
-        String first_item = "Axe";
-        String second_item = "Hammer";
         DuranceStorage duranceStorage = new DuranceStorage();
 
-        duranceStorage.add(first_item);
-        duranceStorage.add(second_item);
+        duranceStorage.add(FIRST_ITEM);
+        duranceStorage.add(SECOND_ITEM);
 
         var items = duranceStorage.getAllItems();
 
-        expected.add(first_item);
-        expected.add(second_item);
+        expected.add(FIRST_ITEM);
+        expected.add(SECOND_ITEM);
 
         assertThat(items, equalTo(expected));
     }
 
     @Test void add_the_item_to_backpack(){
-        String item = "Axe";
+        duranceStorage.add(FIRST_ITEM);
 
-        duranceStorage.add(item);
-
-        expected.add(item);
+        expected.add(FIRST_ITEM);
         ArrayList<String> items = duranceStorage.getAllItems();
 
         assertThat(items, equalTo(expected));
-
     }
 
     @Test void add_two_items_to_backpack(){
-        String first_item = "Axe";
-        String second_item = "Hammer";
+        duranceStorage.add(FIRST_ITEM);
+        duranceStorage.add(SECOND_ITEM);
 
-        duranceStorage.add(first_item);
-        duranceStorage.add(second_item);
-
-        expected.add(first_item);
-        expected.add(second_item);
+        expected.add(FIRST_ITEM);
+        expected.add(SECOND_ITEM);
 
         ArrayList<String> items = duranceStorage.getAllItems();
 
@@ -67,20 +59,17 @@ public class BagsTestShould {
 
     @Test
     void add_multiple_items(){
-        String first_item = "Axe";
-        String second_item = "Hammer";
+        duranceStorage.add(FIRST_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
 
-        duranceStorage.add(first_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-
-        expected.add(first_item);
-        expected.add(second_item);
-        expected.add(second_item);
-        expected.add(second_item);
-        expected.add(second_item);
+        expected.add(FIRST_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
 
         ArrayList<String> items = duranceStorage.getAllItems();
 
@@ -89,27 +78,24 @@ public class BagsTestShould {
 
     @Test void
     not_add_more_than_eight_items(){
-        String first_item = "Axe";
-        String second_item = "Hammer";
+        duranceStorage.add(FIRST_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
+        duranceStorage.add(SECOND_ITEM);
 
-        duranceStorage.add(first_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-        duranceStorage.add(second_item);
-
-        expected.add(first_item);
-        expected.add(second_item);
-        expected.add(second_item);
-        expected.add(second_item);
-        expected.add(second_item);
-        expected.add(second_item);
-        expected.add(second_item);
-        expected.add(second_item);
+        expected.add(FIRST_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
+        expected.add(SECOND_ITEM);
 
         ArrayList<String> items = duranceStorage.getAllItems();
 
