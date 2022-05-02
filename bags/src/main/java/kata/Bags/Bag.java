@@ -15,4 +15,7 @@ public class Bag {
             items.add(item);
         }
     }
+
+    public void sortItemsAlphabetically() {
+    }
 }

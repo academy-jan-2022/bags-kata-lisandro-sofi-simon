@@ -43,4 +43,21 @@ public class BagShould {
         ArrayList<String> result = bag.getAllItems();
         assertThat(result, equalTo(expected));
     }
+
+    @Test void
+    order_items_alphabetically(){
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("Axe");
+        expected.add("Hammer");
+
+        Bag bag = new Bag();
+        bag.add("Hammer");
+        bag.add("Axe");
+
+        bag.sortItemsAlphabetically();
+
+        ArrayList<String> items = bag.getAllItems();
+
+        assertThat(items, equalTo(expected));
+    }
 }
