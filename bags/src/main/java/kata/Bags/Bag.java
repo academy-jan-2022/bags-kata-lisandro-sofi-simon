@@ -6,4 +6,7 @@ public class Bag {
     public ArrayList<String> getAllItems() {
      return new ArrayList<String>();
     }
+
+    public void add(String axe) {
+    }
 }

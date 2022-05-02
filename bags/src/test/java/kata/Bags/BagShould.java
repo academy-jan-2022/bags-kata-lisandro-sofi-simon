@@ -15,4 +15,13 @@ public class BagShould {
         ArrayList<String> result = bag.getAllItems();
         assertThat(result, equalTo(expected));
     }
+    @Test void
+    get_one_item_bag_if_one_item_where_added(){
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("Axe");
+        Bag bag = new Bag();
+        bag.add("Axe");
+        ArrayList<String> result = bag.getAllItems();
+        assertThat(result, equalTo(expected));
+    }
 }
