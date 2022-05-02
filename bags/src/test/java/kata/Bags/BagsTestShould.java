@@ -44,7 +44,7 @@ public class BagsTestShould {
     }
 
     @Test
-    void should_add_multiple_items(){
+    void add_multiple_items(){
         String first_item = "Axe";
         String second_item = "Hammer";
         DuranceStorage duranceStorage = new DuranceStorage();
@@ -67,6 +67,35 @@ public class BagsTestShould {
         assertThat(items, equalTo(expected));
     }
 
+    @Test void
+    not_add_more_than_eight_items(){
+        String first_item = "Axe";
+        String second_item = "Hammer";
+        DuranceStorage duranceStorage = new DuranceStorage();
+        ArrayList<String> expected = new ArrayList<>() {};
 
+        duranceStorage.add(first_item);
+        duranceStorage.add(second_item);
+        duranceStorage.add(second_item);
+        duranceStorage.add(second_item);
+        duranceStorage.add(second_item);
+        duranceStorage.add(second_item);
+        duranceStorage.add(second_item);
+        duranceStorage.add(second_item);
+        var items = duranceStorage.add(second_item);
+
+        expected.add(first_item);
+        expected.add(second_item);
+        expected.add(second_item);
+        expected.add(second_item);
+        expected.add(second_item);
+        expected.add(second_item);
+        expected.add(second_item);
+        expected.add(second_item);
+
+
+
+        assertThat(items, equalTo(expected));
+    }
 
 }
