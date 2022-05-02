@@ -39,6 +39,7 @@ public class BagShould {
         bag.add("Axe");
         bag.add("Axe");
         bag.add("Axe");
+
         ArrayList<String> result = bag.getAllItems();
         assertThat(result, equalTo(expected));
     }
